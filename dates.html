@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IDEA-ARCH 2025</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="icon" href="images/tac-icon-blue-transparent.png" type="image/icon type">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <script src="scripts.js" defer></script>
+
+<style>
+/* ================= BASE ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Lexend', sans-serif;
+}
+
+body{
+  background:#f6f9fc;
+  color:#333;
+}
+
+/* Header spacer (DO NOT REMOVE) */
+#header{
+  height:90px;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    z-index: 9999;
+    background: #fcfcfc;
+}
+
+/* ================= MAIN ================= */
+main{
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+
+/* ================= WRAPPER ================= */
+.page-wrapper{
+  width:100%;
+  max-width:1100px;
+  padding:40px 20px 90px;
+}
+
+/* ================= TITLE ================= */
+.page-title{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.page-title h1{
+  font-size:42px;
+  font-weight:800;
+  color:#0a4fa3;
+}
+
+.page-title h1::after{
+  content:"";
+  display:block;
+  width:90px;
+  height:4px;
+  background:#0a4fa3;
+  margin:14px auto 0;
+  border-radius:4px;
+}
+
+/* ================= CARD ================= */
+.submission-card{
+  background:#fff;
+  border-radius:18px;
+  padding:50px;
+  box-shadow:0 30px 70px rgba(0,0,0,0.15);
+
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s ease;
+}
+
+.submission-card.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.submission-card p{
+  font-size:16px;
+  line-height:1.9;
+  margin-bottom:18px;
+  text-align:justify;
+}
+
+/* ================= HEADER ROW ================= */
+.card-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.card-header h3{
+  font-size:22px;
+  font-weight:700;
+  color:#1d3d55;
+}
+
+#darkModeToggle{
+  border:none;
+  background:#eef2ff;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* ================= COUNTDOWN ================= */
+.global-countdown{
+  background:#f5f7fb;
+  padding:12px 16px;
+  border-radius:8px;
+  margin-bottom:25px;
+  font-size:14px;
+}
+
+.global-countdown span{
+  color:#b30000;
+  font-weight:600;
+}
+
+/* ================= TABLE ================= */
+.styled-table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.styled-table th,
+.styled-table td{
+  padding:14px 16px;
+  border-bottom:1px solid #e2e6ef;
+}
+
+.styled-table th{
+  text-align:left;
+  font-weight:600;
+}
+
+.styled-table td{
+  position:relative;
+  padding-left:45px;
+  text-align:right;
+  color:#0a4fa3;
+  font-weight:600;
+}
+
+/* ================= TIMELINE ================= */
+.timeline-dot{
+  width:10px;
+  height:10px;
+  background:#0a4fa3;
+  border-radius:50%;
+  position:absolute;
+  left:18px;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.timeline-line{
+  position:absolute;
+  left:22px;
+  top:0;
+  bottom:0;
+  width:2px;
+  background:#d4def5;
+}
+
+/* ================= ROW ANIMATION ================= */
+.styled-table tr{
+  opacity:0;
+  transform:translateX(-20px);
+  transition:.4s ease;
+}
+
+.styled-table tr.visible{
+  opacity:1;
+  transform:translateX(0);
+}
+
+/* ================= DARK MODE ================= */
+body.dark{
+  background:#121212;
+  color:#eaeaea;
+}
+
+body.dark .submission-card{
+  background:#1e1e1e;
+}
+
+body.dark .global-countdown{
+  background:#252525;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    header {
+        position: fixed;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .box-icon {
+        display: flex;
+        position: fixed;
+        top: 22px;
+        right: 20px;
+        z-index: 11000;
+        cursor: pointer;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 90px);
+        background-color: #ffffff;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+
+        padding: 10px 0;
+        overflow-y: auto;
+
+        box-shadow: 0 10px 25px rgba(0,0,0,.2);
+        z-index: 10000;
+    }
+
+    nav ul.showmenu {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    nav ul li a {
+        padding: 14px 22px;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    nav ul li a.link-btn {
+        margin: 12px 20px;
+        text-align: center;
+    }
+
+    /* MOBILE DROPDOWN */
+    nav ul li ul.dropdown {
+        position: static;
+        display: none;
+        width: 100%;
+        background: #f6f7fb;
+        box-shadow: none;
+    }
+
+    nav ul li.open ul.dropdown {
+        display: block;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="header" class="header"></div>
+
+<main>
+  <div class="page-wrapper">
+
+    <div class="page-title">
+      <h1>Important Dates</h1>
+    </div>
+
+    <div class="submission-card" id="datesCard">
+
+      <p>
+        The <strong>IDEA-Arch 2026 Workshop</strong> follows the submission timeline of ECSA 2026.
+        Authors are requested to carefully observe the following important dates.
+      </p>
+
+      <div class="card-header">
+        <h3>Submission Timeline</h3>
+        <button id="darkModeToggle">🌙</button>
+      </div>
+
+      <div class="global-countdown">
+        <strong>Next Deadline:</strong>
+        <span id="globalCountdown">Loading…</span>
+      </div>
+
+      <table class="styled-table">
+        <tbody>
+
+          <tr data-deadline="2026-05-01T23:59:59">
+            <th>Abstract Submission</th>
+            <td>
+              <span class="timeline-line"></span>
+              <span class="timeline-dot"></span>
+              Fri 1 May 2026
+              <div class="countdown"></div>
+            </td>
+          </tr>
+
+          <tr data-deadline="2026-05-08T23:59:59">
+            <th>Paper Submission</th>
+            <td>
+              <span class="timeline-line"></span>
+              <span class="timeline-dot"></span>
+              Fri 8 May 2026
+              <div class="countdown"></div>
+            </td>
+          </tr>
+
+          <tr data-deadline="2026-06-08T23:59:59">
+            <th>Notification</th>
+            <td>
+              <span class="timeline-line"></span>
+              <span class="timeline-dot"></span>
+              Mon 8 Jun 2026
+              <div class="countdown"></div>
+            </td>
+          </tr>
+
+          <tr data-deadline="2026-06-29T23:59:59">
+            <th>Camera-ready</th>
+            <td>
+              <span class="timeline-line"></span>
+              <span class="timeline-dot"></span>
+              Mon 29 Jun 2026
+              <div class="countdown"></div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+</main>
+
+<div id="footer"></div>
+
+<script>
+/* Fade-in */
+const card=document.getElementById("datesCard");
+new IntersectionObserver(e=>{
+  if(e[0].isIntersecting) card.classList.add("visible");
+},{threshold:.3}).observe(card);
+
+/* Row animation */
+document.querySelectorAll(".styled-table tr").forEach((row,i)=>{
+  setTimeout(()=>row.classList.add("visible"),200*i);
+});
+
+/* Dark mode */
+document.getElementById("darkModeToggle").onclick=()=>{
+  document.body.classList.toggle("dark");
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ================= DARK MODE ================= */
+  const toggle = document.getElementById("darkModeToggle");
+
+  if (toggle) {
+    if (localStorage.theme === "dark") {
+      document.body.classList.add("dark");
+    }
+
+    toggle.onclick = () => {
+      document.body.classList.toggle("dark");
+      localStorage.theme = document.body.classList.contains("dark")
+        ? "dark"
+        : "light";
+    };
+  }
+
+  /* ================= MAIN CARD ANIMATION ================= */
+  const card = document.querySelector(".submission-card");
+  if (!card) return; // safety
+
+  const rows = card.querySelectorAll(".styled-table tr");
+  const dots = card.querySelectorAll(".timeline-dot");
+
+  new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      card.classList.add("visible");
+
+      rows.forEach((row, i) => {
+        setTimeout(() => {
+          row.classList.add("visible");
+          if (dots[i]) {
+            dots[i].style.transform = "translateY(-50%) scale(1)";
+          }
+        }, i * 120);
+      });
+    }
+  }, { threshold: 0.3 }).observe(card);
+
+  /* ================= PER-ROW COUNTDOWNS ================= */
+  let nextRow = null;
+  let nextDeadline = null;
+
+  rows.forEach(row => {
+    const deadlineStr = row.dataset.deadline;
+    if (!deadlineStr) return;
+
+    const deadline = new Date(deadlineStr);
+    const cd = row.querySelector(".countdown");
+    if (!cd) return;
+
+    if (deadline > new Date() && (!nextDeadline || deadline < nextDeadline)) {
+      nextDeadline = deadline;
+      nextRow = row;
+    }
+
+    const updateRowCountdown = () => {
+      const diff = deadline - new Date();
+      if (diff <= 0) {
+        cd.textContent = "Passed";
+        return;
+      }
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      cd.textContent = `${d}d ${h}h remaining`;
+    };
+
+    updateRowCountdown();
+    setInterval(updateRowCountdown, 60000);
+  });
+
+  if (nextRow) {
+    nextRow.classList.add("next-upcoming");
+  }
+
+  /* ================= GLOBAL COUNTDOWN ================= */
+  const globalEl = document.getElementById("globalCountdown");
+
+  if (globalEl) {
+    const updateGlobal = () => {
+      if (!nextDeadline) {
+        globalEl.textContent = "No upcoming deadlines";
+        return;
+      }
+
+      const diff = nextDeadline - new Date();
+      if (diff <= 0) {
+        globalEl.textContent = "Deadline passed";
+        return;
+      }
+
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const m = Math.floor((diff / (1000 * 60)) % 60);
+
+      globalEl.textContent = `${d}D ${h}H ${m}M Remaining`;
+    };
+
+    updateGlobal();
+    setInterval(updateGlobal, 60000);
+  }
+
+});
+
+</script>
+
+</body>
+</html>

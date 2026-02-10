@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IDEA-ARCH 2025</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="icon" href="images/tac-icon-blue-transparent.png" type="image/icon type">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <script src="scripts.js" defer></script>
+
+  <style>
+
+/* ===== PAGE BASE ===== */
+#header {
+    height: 90px;       /* EXACT navbar height */
+    width: 100%;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    z-index: 9999;
+    background: #fcfcfc;
+}
+/* ===== HEADING ===== */
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
+  position:relative;
+}
+
+.section-title h2{
+  font-size:34px;
+  color:#0a4fa3;
+  display:inline-block;
+  position:relative;
+}
+
+.section-title h2::after{
+  content:"";
+  position:absolute;
+  width:70%;
+  height:4px;
+  background:#0a4fa3;
+  left:50%;
+  bottom:-12px;
+  transform:translateX(-50%);
+  animation:slide 1.2s ease;
+}
+
+@keyframes slide{
+  from{width:0;}
+  to{width:70%;}
+}
+
+/* ===== GRID ===== */
+.team-container{
+  max-width:1200px;
+  margin:auto;
+}
+
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
+}
+
+/* ===== CARD ===== */
+.our-team{
+  width:260px;
+  background:#ffffff;
+  padding:30px 20px 50px;
+  border-radius:14px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:transform 0.35s ease;
+}
+
+.our-team:hover{
+  transform:translateY(-8px);
+}
+
+/* ===== IMAGE ===== */
+.picture{
+  width:120px;
+  height:120px;
+  margin:0 auto 15px;
+  position:relative;
+}
+
+.picture::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:#0a4fa3;
+  border-radius:50%;
+  transform:scale(0);
+  transition:0.4s ease;
+}
+
+.our-team:hover .picture::before{
+  transform:scale(1);
+}
+
+.picture img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+  position:relative;
+  z-index:2;
+  transition:0.4s ease;
+}
+
+.our-team:hover img{
+  transform:scale(0.75);
+  box-shadow:0 0 0 10px #fff;
+}
+
+/* ===== TEXT ===== */
+.name{
+  font-size:17px;
+  font-weight:700;
+  color:#0a4fa3;
+  margin-top:8px;
+}
+
+.title{
+  font-size:14px;
+  color:#555;
+  margin-bottom:10px;
+}
+
+/* ===== ROLE BADGES ===== */
+.roles{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  justify-content:center;
+}
+
+.role-badge{
+  font-size:11px;
+  padding:4px 10px;
+  background:#eef2ff;
+  color:#0a4fa3;
+  border-radius:999px;
+  font-weight:600;
+}
+
+/* ===== ICON BAR ===== */
+.social{
+  position:absolute;
+  bottom:-60px;
+  left:0;
+  width:100%;
+  background:#0a4fa3;
+  padding:10px 0;
+  transition:0.4s ease;
+}
+
+.our-team:hover .social{
+  bottom:0;
+}
+
+.social li{
+  display:inline-block;
+  margin:0 8px;
+}
+
+.social li a{
+  color:#fff;
+  font-size:18px;
+  transition:0.3s;
+}
+
+.social li a:hover{
+  color:#ffd700;
+}
+
+</style>
+
+</head>
+<body>
+
+  <!-- Header is included here by JS - check scripts.js  -->
+  <div id="header" class="header"></div>
+
+  <main>
+    <section class="text-page">
+      <!-- ===== HEADING ===== -->
+<div class="section-title">
+  <h2>Procedings</h2>
+</div>
+
+<!-- ===== TEAM ===== -->
+<div class="team-container">
+  <div class="row">
+    <div class="our-team">
+        Procedings: 
+        To be announced (TBA)
+    </div>
+  </div>
+</div>
+
+    </section>
+  </main>
+
+  <!-- Footer is included here by JS - check scripts.js  -->
+  <div id="footer"></div>
+
+</body>
+</html>

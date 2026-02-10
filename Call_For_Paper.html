@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IDEA-ARCH 2025</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="icon" href="images/tac-icon-blue-transparent.png" type="image/icon type">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <script src="scripts.js" defer></script>
+
+
+<style>
+
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Lexend', sans-serif;
+}
+
+body{
+    background:#f6f9fc;
+    color:#333;
+}
+
+/* ===== HEADER FIX ===== */
+#header {
+    height: 90px;       /* EXACT navbar height */
+    width: 100%;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    z-index: 9999;
+    background: #fcfcfc;
+}
+
+
+
+/* ===== MAIN ===== */
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px; /* spacing after header */
+}
+
+
+/* ===== PAGE WRAPPER ===== */
+.cfp-wrapper{
+    width:100%;
+    max-width:1100px;
+    padding:40px 20px 80px;
+}
+
+/* ===== TITLE ===== */
+.page-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.page-title h1{
+    font-size:42px;
+    font-weight:800;
+    color:#0a4fa3;
+}
+
+.page-title h1::after{
+    content:"";
+    display:block;
+    width:90px;
+    height:4px;
+    background:#0a4fa3;
+    margin:14px auto 0;
+    border-radius:4px;
+}
+
+/* ===== CARD ===== */
+.cfp-card{
+    background:#ffffff;
+    border-radius:18px;
+    padding:50px;
+    box-shadow:0 30px 70px rgba(0,0,0,0.15);
+
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 0.8s ease;
+}
+
+.cfp-card.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.cfp-card p{
+    font-size:16px;
+    line-height:1.9;
+    margin-bottom:18px;
+    text-align:justify;
+}
+
+/* ===== SUBHEADINGS ===== */
+.cfp-subtitle{
+    margin-top:40px;
+    margin-bottom:14px;
+    font-size:22px;
+    font-weight:700;
+    color:#1d3d55;
+}
+
+/* ===== LIST ===== */
+.cfp-list{
+    margin-left:22px;
+}
+
+.cfp-list li{
+    margin-bottom:10px;
+    line-height:1.7;
+}
+
+/* ===== BUTTONS ===== */
+.cfp-actions{
+    margin-top:50px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.cfp-btn{
+    padding:14px 26px;
+    font-size:15px;
+    font-weight:600;
+    border-radius:8px;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    transition:all 0.3s ease;
+}
+
+.cfp-btn.primary{
+    background:#0a4fa3;
+    color:#fff;
+}
+
+.cfp-btn.primary:hover{
+    background:#083b7a;
+    transform:translateY(-2px);
+}
+
+.cfp-btn.secondary{
+    background:#eef2ff;
+    color:#0a4fa3;
+}
+
+.cfp-btn.secondary:hover{
+    background:#dbe4ff;
+    transform:translateY(-2px);
+}
+
+@media only screen and (max-width: 1024px) {
+
+    header {
+        position: fixed;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .box-icon {
+        display: flex;
+        position: fixed;
+        top: 22px;
+        right: 20px;
+        z-index: 11000;
+        cursor: pointer;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 90px);
+        background-color: #ffffff;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+
+        padding: 10px 0;
+        overflow-y: auto;
+
+        box-shadow: 0 10px 25px rgba(0,0,0,.2);
+        z-index: 10000;
+    }
+
+    nav ul.showmenu {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    nav ul li a {
+        padding: 14px 22px;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    nav ul li a.link-btn {
+        margin: 12px 20px;
+        text-align: center;
+    }
+
+    /* MOBILE DROPDOWN */
+    nav ul li ul.dropdown {
+        position: static;
+        display: none;
+        width: 100%;
+        background: #f6f7fb;
+        box-shadow: none;
+    }
+
+    nav ul li.open ul.dropdown {
+        display: block;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="header" class="header"></div>
+
+<main>
+  <div class="cfp-wrapper">
+
+    <div class="page-title">
+      <h1>Call for Papers</h1>
+    </div>
+
+    <div class="cfp-card" id="cfpCard">
+
+      <p>
+        <strong>IDEA-Arch 2026 Workshop on Intelligent and Data-Driven Approaches for Software Architecture will be co-located with the European Conference on Software Architecture (ECSA 2026).</strong> 
+        The workshop provides a dedicated forum for researchers and practitioners interested in applying artificial intelligence (AI), natural language processing (NLP), machine learning (ML), computational intelligence, and data-driven software engineering techniques to architectural reasoning and decision-making. 
+        Software architecture is inherently knowledge-intensive and decision-centric. Architects rely on heterogeneous artifacts such as architectural decision records (ADRs), design rationale, documentation, repositories, and communication traces to reason about trade-offs, quality attributes, and long-term sustainability. As systems evolve and architectural complexity increases, manual analysis of such knowledge becomes increasingly difficult.
+      </p>
+      <P>
+        IDEA-Arch 2026 invites high-quality contributions that investigate, evaluate, or critically reflect on intelligent and data-driven approaches for software architecture. Submissions must demonstrate clear architectural relevance and explain how proposed methods support architectural reasoning rather than replacing human judgment.
+      </p>
+
+      <h3 class="cfp-subtitle">Topics of Interest</h3>
+      <p>
+      In line with the research themes of  <strong>ECSA 2026, IDEA-Arch Workshop</strong> emphasizes intelligent and data-driven approaches for software architecture reasoning and decision-making. Submissions addressing a broad range of architectural concerns are also encouraged, provided that they demonstrate clear architectural relevance and contribute to informed architectural decision-making. 
+      </p>
+      <p>
+      Topics of interest include, but are not limited to, the following.
+
+      </p>
+      <ul class="cfp-list">
+        <li>NLP-based analysis of architectural descriptions.</li>
+        <li>Architectural decision-making under uncertainty.</li>
+        <li>Recommendation of architectural tactics and patterns.</li>
+        <li>MSR for architectural knowledge and evolution patterns</li>
+        <li>Automated detection of architecture smells and Technical Debt.</li>
+        <li>Automated extraction and classification of architectural knowledge.</li>
+        <li>Empirical validation strategies for intelligent architectural methods.</li>
+        <li>Mining architectural concerns and design rationales from repositories.</li>
+        <li>Trust calibration and interpretability of architectural recommendations.</li>
+        <li>Computational intelligence techniques for architectural trade-off analysis.</li>
+        <li>Explainability and transparency of intelligent architectural analysis tools.</li>
+      </ul>
+
+      <h3 class="cfp-subtitle">Paper Categories</h3>
+      <p>IDEA-Arch 2026 invites the following types of contributions:</p>
+      <ul class="cfp-list">
+        <li><strong>Research papers (up to 16 pages, LNCS format)</strong>  presenting mature research contributions with strong architectural relevance and empirical grounding.</li>
+        <li><strong>Short or position papers (up to 8 pages, LNCS)</strong> describing emerging ideas, preliminary results, critical reflections, or forward-looking perspectives.</li>
+        <li><strong>Industrial experience reports (up to 8 pages, LNCS)</strong>  reporting industrial applications, challenges, and lessons learned from applying intelligent or data driven approaches to software architecture.</li>
+        <p>
+        All submissions must clearly articulate their relevance to software architecture and explain how intelligent or data-driven techniques contribute to architectural reasoning, decision-making, evaluation, or evolution. All submissions must follow the Springer LNCS format and will be reviewed by at least three program committee members. Accepted papers will be included in the workshop proceedings of ECSA.
+        </p>
+      </ul>
+
+      <h3 class="cfp-subtitle">Paper Review & Publication</h3>
+      <p>All submissions will be reviewed by at least three members of the Program Committee with expertise in software architecture, empirical software engineering, and intelligent analysis of software artifacts. Submissions will be evaluated based on the following criteria:</p>
+        <ul class="cfp-list">
+          <li>Relevance to the scope of the workshop and target areas;</li>
+          <li>Technical soundness and methodological rigor;</li>
+          <li>Clarity of presentation;</li>
+          <li>Contribution to architectural knowledge and practice.</li>
+        </ul>
+        <p> All submissions must follow the <strong> Lecture Notes in Computer Science (LNCS)</strong> formatting guidelines and be written in English. Papers including references, and must be submitted electronically in PDF format via EasyChair under the <strong>ECSA 2026 Workshops track</strong>. Each submission will undergo a peer-review process conducted by the workshop’s Program Committee. Accepted papers will be published in the ECSA 2026 Companion Proceedings in the LNCS series and will be made available through the SpringerLink Digital Library.</p> 
+        <p><strong>Please note that no changes to the list of authors will be permitted after submission.</strong></p>
+      <div class="cfp-actions">
+        <a href="https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines"
+           target="_blank" class="cfp-btn secondary">
+          <i class="fa-solid fa-file-lines"></i> LNCS Format
+        </a>
+
+        <a href="#" class="cfp-btn primary">
+          <i class="fa-solid fa-paper-plane"></i> Submit Paper
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+<div id="footer"></div>
+
+<script>
+const card = document.getElementById("cfpCard");
+new IntersectionObserver(entries=>{
+  if(entries[0].isIntersecting){
+    card.classList.add("visible");
+  }
+},{threshold:0.3}).observe(card);
+</script>
+
+</body>
+</html>
