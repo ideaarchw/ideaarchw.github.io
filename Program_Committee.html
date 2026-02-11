@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IDEA-ARCH 2025</title>
+  <title>IDEA-ARCH 2026</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,6 +30,7 @@
     z-index: 9999;
     background: #fcfcfc;
 }
+
 /* ===== HEADING ===== */
 .section-title{
   text-align:center;
@@ -189,6 +190,50 @@
   color:#ffd700;
 }
 
+.text-page {
+  width: 80%;
+  margin: 20px auto;
+  padding-bottom: 20px; /* 👈 pushes footer down */
+}
+
+.our-team_p{
+  width: 100%;
+  max-width: 700px;      /* 👈 horizontal width */
+  background:#ffffff;
+  padding: 40px 30px;
+  border-radius:14px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:transform 0.35s ease;
+
+}
+
+.our-team_p::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 80px;
+  height: 4px;
+  background: #0a4fa3;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+
+.row_p{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  min-height: 10vh;   /* 👈 keeps it visually centered */
+  gap:25px;
+}
+
+
+
 </style>
 
 </head>
@@ -197,24 +242,27 @@
   <!-- Header is included here by JS - check scripts.js  -->
   <div id="header" class="header"></div>
 
-  <main>
-    <section class="text-page">
+<main>
+  
+<section class="text-page">
       <!-- ===== HEADING ===== -->
 <div class="section-title">
-  <h2>Procedings</h2>
+  <h2>Program Committee</h2>
 </div>
 
 <!-- ===== TEAM ===== -->
 <div class="team-container">
-  <div class="row">
-    <div class="our-team">
-        Program Committee: 
-        To be announced (TBA)
+  <div class="row_p">
+    <div class="our-team_p">
+        Program Committee: To be announced (TBA)
     </div>
   </div>
 </div>
 
-    </section>
+</section>
+
+
+
   </main>
 
   <!-- Footer is included here by JS - check scripts.js  -->
