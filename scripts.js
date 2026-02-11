@@ -9,15 +9,19 @@ function loadComponents() {
     <nav>
         <a href="index.html">
             <section class="hero-logo">
-                <img src="images/IDEA-ARCH png Vertical-01.png" alt="IDEA-Arch 2026 Logo" height="60px"  class="idea-logo hero-logo-svg">
+                <img src="images/H-CARE Vertical WEB PNG-01.png" alt="IDEA-Arch 2026 Logo" height="60px"  class="idea-logo hero-logo-svg">
             </section>
         </a>
         <ul class="main__ul">
             <li><a href="index.html">Home</a></li>
             <li><a href="dates.html">Important Dates</a></li>
             <li><a href="Call_For_Paper.html">Call For Papers</a></li>
-            <li><a href="Organizing_Committee.html">Organizing Committee</a></li>
-            <li><a href="Program_Committee.html">Program Committee</a></li>
+            <li><a href="#">Committees</a>
+            <ul class="dropdown">
+                <li><a href="Organizing_Committee.html">Organizing Committee</a></li>
+                <li><a href="Program_Committee.html">Program Committee</a></li>
+            </ul>
+            </li>
             <li><a href="Contact.html">Contact</a></li>
             <li><a href="#" class="link-btn">Registration</a></li>
         </ul>
