@@ -32,7 +32,7 @@ function loadComponents() {
 
     footer = `
     <footer>
-        <p>© Copyright 2026. IDEA-ARCH 2025 - Designed by Muhammad Haroon</p>
+        <p>© Copyright 2026. IDEA-ARCH 2026 - Designed by Muhammad Haroon</p>
     </footer>
     `
 
