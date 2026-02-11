@@ -9,7 +9,7 @@ function loadComponents() {
     <nav>
         <a href="index.html">
             <section class="hero-logo">
-                <img src="images/H-CARE Vertical WEB PNG-01.png" alt="IDEA-Arch 2026 Logo" height="60px"  class="idea-logo hero-logo-svg">
+                <img src="images/IDEA-ARCH png Vertical-01.png" alt="IDEA-Arch 2026 Logo" height="60px"  class="idea-logo hero-logo-svg">
             </section>
         </a>
         <ul class="main__ul">
