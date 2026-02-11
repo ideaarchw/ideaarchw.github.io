@@ -16,12 +16,8 @@ function loadComponents() {
             <li><a href="index.html">Home</a></li>
             <li><a href="dates.html">Important Dates</a></li>
             <li><a href="Call_For_Paper.html">Call For Papers</a></li>
-            <li><a href="#">Committees</a>
-            <ul class="dropdown">
-                <li><a href="Organizing_Committee.html">Organizing Committee</a></li>
-                <li><a href="Keynote_Speaker.html">Keynote Speakers</a></li>
-            </ul>
-            </li>
+            <li><a href="Organizing_Committee.html">Organizing Committee</a></li>
+            <li><a href="Program_Committee.html">Program Committee</a></li>
             <li><a href="Contact.html">Contact</a></li>
             <li><a href="#" class="link-btn">Registration</a></li>
         </ul>
@@ -32,7 +28,7 @@ function loadComponents() {
 
     footer = `
     <footer>
-        <p>© Copyright 2026. IDEA-ARCH 2025 - Designed by Muhammad Haroon</p>
+        <p>© Copyright 2026. IDEA-ARCH 2026 - Designed by Muhammad Haroon</p>
     </footer>
     `
 
