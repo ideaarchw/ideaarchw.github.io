@@ -34,7 +34,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 60%;
+    min-width: 80%;
 }
 
 nav ul {
@@ -377,7 +377,7 @@ body {
 }
 
 .hero-logo-svg {
-  height: 70px;
+  height: 80px;
   width: auto;
   filter: drop-shadow(0 8px 18px rgba(0, 91, 187, 0.25));
 }
