@@ -23,7 +23,7 @@ function loadComponents() {
             </ul>
             </li>
             <li><a href="Contact.html">Contact</a></li>
-            <li><a href="#" class="link-btn">Registration</a></li>
+            <li><a href="https://conf.researchr.org/attending/ecsa-2026/registration" class="link-btn">Registration</a></li>
         </ul>
     </nav>
     <div id='menu' class='box-icon'><i class='bx bx-menu'></i></div>
